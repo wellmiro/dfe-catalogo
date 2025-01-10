@@ -10,70 +10,48 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('background.jpg'); /* Adicionando o background.jpg */
+            background-image: url('background.jpg'); /* Background geral */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: #000; /* Cor de texto para preto (exceto título) */
+            color: #000;
         }
-        header {
+
+        .banner-container {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 30px;
-            background-image: url('fundo.jpg'); /* Imagem de fundo do header */
+        }
+
+        #fundo {
+            background-image: url('fundo.png'); /* Banner com fundo.png */
             background-size: cover;
             background-position: center;
-            color: #fff;
+            height: 250px; /* Ajustando a altura do banner */
+            width: 100%;
             border-radius: 0 0 10px 10px;
-            height: 200px; /* Manter altura do fundo como 200px */
         }
-        .header-content {
-            flex: 1;
-            background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para destacar o texto */
-            padding-left: 20px;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 500px; /* Limitar o tamanho para que o texto não ocupe espaço demais */
-        }
-        .thumb-container {
-            height: 150px; /* Diminuindo o tamanho da imagem */
-            width: 150px; /* Diminuindo o tamanho da imagem */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: transparent; /* Remover o fundo preto */
-            border: none;
-            margin-right: 20px;
-        }
-        header img {
-            width: 100%;  
-            height: auto;
-            object-fit: cover;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Adicionando sombra preta */
-        }
-        header h1 {
-            margin: 20px 0 10px;
-            font-size: 22px;  /* Reduzindo o tamanho da fonte do título */
-            color: #FF0055;
-            font-weight: bold;
-            text-align: center; /* Centraliza o título */
-            text-shadow: 1px 1px 4px #000; /* Sombra preta e reduzida */
-        }
-        header p {
-            margin: 5px 0 0;
-            font-size: 14px; /* Diminuindo o tamanho da fonte do texto */
+
+        .message {
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
             color: #fff;
-            text-shadow: 1px 1px 5px #000;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            font-size: 18px;
+            border-radius: 10px;
+            margin-top: 20px; /* Reduziu o espaçamento entre o fundo.png e o texto */
         }
+
         .container {
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com leve transparência */
+            background-color: rgba(255, 255, 255, 0.8);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
+
         .categories {
             display: flex;
             justify-content: center;
@@ -86,7 +64,7 @@
         }
         .category i {
             font-size: 40px;
-            color: #FF0055; /* Cor dos ícones ajustada */
+            color: #FF0055;
             transition: color 0.3s;
         }
         .category p {
@@ -252,16 +230,16 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="thumb-container">
-            <img src="thumb.png" alt="Thumb">
-        </div>
-        <div class="header-content">
-            <h1>DFE FITNESS</h1>
+    <div class="banner-container">
+        <!-- Banner de fundo -->
+        <div id="fundo"></div>
+
+        <!-- Mensagem abaixo do banner -->
+        <div class="message">
             <p>- Comunidade para quem anseia mudança de vida🧠</p>
             <p>- Quer estar perto de pessoas com o mesmo objetivo? Faça parte do nosso grupo no WhatsApp🚀</p>
         </div>
-    </header>
+    </div>
 
     <div class="container">
         <div class="categories">
