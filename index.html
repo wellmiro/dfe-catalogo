@@ -36,25 +36,26 @@
             padding: 20px;
         }
         .thumb-container {
-            height: 140px;
-            width: 140px;
+            height: 200px; /* Aumentando o tamanho da imagem */
+            width: 200px; /* Aumentando o tamanho da imagem */
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 10px; /* Cantos arredondados */
-            overflow: hidden;
-            background-color: black; /* Fundo preto */
-            border: 3px solid #fff;
-            margin-right: 20px; /* Adicionando margem direita para separar da área de texto */
+            /* Remover fundo preto e borda */
+            background-color: transparent; /* Remover o fundo preto */
+            /* Remover bordas e arredondamento */
+            border: none;
+            margin-right: 20px; /* Manter margem direita para separar do texto */
         }
         header img {
-            width: 80%;  /* Ajustando a imagem para ocupar 80% da altura do header */
+            width: 100%;  /* Aumentando o tamanho da imagem para ocupar 100% da div */
             height: auto;
             object-fit: cover;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Adicionando sombra preta */
         }
         header h1 {
             margin: 20px 0 10px;
-            font-size: 25px;  /* Tamanho do título ajustado para 25px */
+            font-size: 30px;  /* Diminuí o tamanho da fonte do título */
             color: #FF0055;
             font-weight: bold;
             text-align: center; /* Centraliza o título */
@@ -84,7 +85,7 @@
             margin: 0 15px;
         }
         .category i {
-            font-size: 60px;
+            font-size: 40px;
             color: #FF0055; /* Cor dos ícones ajustada */
             transition: color 0.3s;
         }
@@ -128,7 +129,6 @@
             font-size: 18px;
             color: #28a745;
             margin-bottom: 20px;
-            font-weight: bold; /* Negrito para o valor */
         }
         .colors {
             margin-bottom: 20px;
