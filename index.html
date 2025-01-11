@@ -21,6 +21,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin: 0; /* Remove espaçamento extra */
         }
 
         #fundo {
@@ -31,22 +32,13 @@
             width: 100%;
             border-radius: 0 0 10px 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra aplicada */
-        }
-
-        .message {
-            background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            width: 100%;
-            font-size: 18px;
-            border-radius: 10px;
-            margin-top: 20px; /* Reduziu o espaçamento entre o fundo.png e o texto */
+            margin: 0; /* Remove qualquer margem extra */
+            padding: 0;
         }
 
         .container {
             max-width: 1200px;
-            margin: 20px auto;
+            margin: -10px auto 0; /* Remove o espaço entre fundo e layout */
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.8);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -56,8 +48,8 @@
         .categories {
             display: flex;
             justify-content: center;
-            margin-bottom: 30px;
-            padding: 20px 0;
+            margin: 0; /* Remove o espaçamento extra */
+            padding: 10px 0; /* Ajuste o padding conforme necessário */
             text-align: center;
         }
         .category {
@@ -234,12 +226,6 @@
     <div class="banner-container">
         <!-- Banner de fundo -->
         <div id="fundo"></div>
-
-        <!-- Mensagem abaixo do banner -->
-        <div class="message">
-            <p>- Comunidade para quem anseia mudança de vida🧠</p>
-            <p>- Quer estar perto de pessoas com o mesmo objetivo? Faça parte do nosso grupo no WhatsApp🚀</p>
-        </div>
     </div>
 
     <div class="container">
@@ -291,7 +277,7 @@
         <div class="info-section">
             <h3>Informações</h3>
             <p>🌟 Prepare-se para a revolução das coqueteleiras! 🌟</p>
-            <p>Estamos empolgados em anunciar que nosso mais novo lançamento Chegou : Coqueteleiras DFE FIT! ✅💪🏽</p>
+            <p>Estamos empolgados em anunciar que nosso mais novo lançamento chegou: Coqueteleiras DFE FIT! ✅💪🏽</p>
             <p>Com um design moderno e vibrante, essas coqueteleiras são perfeitas para aqueles que buscam alta performance. Cheias de vida e cores, elas foram criadas para inspirar o seu melhor desempenho!</p>
             <p>Não fique de fora dessa! Transforme sua rotina de treinos com estilo e eficiência!</p>
         </div>
