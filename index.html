@@ -10,100 +10,113 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('background.jpg'); /* Background geral */
+            background-image: url('background.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: #000;
+            color: #333;
         }
 
         .banner-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 0; /* Remove espaçamento extra */
         }
 
         #fundo {
-            background-image: url('fundo.png'); /* Banner com fundo.png */
+            background-image: url('fundo.png');
             background-size: cover;
             background-position: center;
-            height: 250px; /* Ajustando a altura do banner */
+            height: 250px;
             width: 100%;
             border-radius: 0 0 10px 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra aplicada */
-            margin: 0; /* Remove qualquer margem extra */
-            padding: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .container {
             max-width: 1200px;
-            margin: -10px auto 0; /* Remove o espaço entre fundo e layout */
+            margin: -10px auto 0;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.9);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
 
         .categories {
             display: flex;
-            justify-content: center;
-            margin: 0; /* Remove o espaçamento extra */
-            padding: 10px 0; /* Ajuste o padding conforme necessário */
+            justify-content: space-around;
+            padding: 20px 0;
             text-align: center;
         }
+
         .category {
-            margin: 0 15px;
+            text-align: center;
         }
+
         .category i {
             font-size: 40px;
             color: #FF0055;
             transition: color 0.3s;
         }
+
         .category p {
             margin-top: 10px;
             font-size: 18px;
             font-weight: bold;
-            color: black;
         }
+
         .category:hover i {
             color: #ff6b6b;
         }
+
         .product-section {
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
+            margin-bottom: 40px;
         }
+
         .product-image {
             flex: 2;
             text-align: center;
-            flex-basis: 60%;
         }
+
         .product-image img {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
             cursor: pointer;
-            width: 100%;
             transition: transform 0.3s ease;
         }
+
+        .product-image img:hover {
+            transform: scale(1.05);
+        }
+
         .product-details {
             flex: 1;
-            flex-basis: 35%;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .product-title {
             font-size: 22px;
             font-weight: bold;
             margin-bottom: 10px;
         }
+
         .product-price {
             font-size: 18px;
             color: #28a745;
             margin-bottom: 20px;
         }
+
         .colors {
             margin-bottom: 20px;
         }
+
         .colors button {
             margin: 5px;
             padding: 10px;
@@ -112,9 +125,11 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
+
         .colors button:hover {
             background-color: #ddd;
         }
+
         .whatsapp-button {
             display: inline-block;
             background-color: #25d366;
@@ -129,13 +144,16 @@
             gap: 10px;
             margin-bottom: 20px;
         }
+
         .whatsapp-button i {
             font-size: 20px;
         }
+
         .thumbnail-gallery {
             display: flex;
             gap: 10px;
         }
+
         .thumbnail-gallery img {
             width: 80px;
             height: 80px;
@@ -143,9 +161,7 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .info-section {
-            margin-top: 30px;
-        }
+
         .footer-whatsapp {
             position: fixed;
             bottom: 20px;
@@ -155,35 +171,23 @@
             border-radius: 50%;
             cursor: pointer;
         }
+
         .footer-whatsapp i {
             color: white;
             font-size: 30px;
         }
 
-        /* Responsividade para telas pequenas */
         @media (max-width: 768px) {
-            .product-image {
+            .product-image, .product-details {
                 flex-basis: 100%;
             }
-            .product-details {
-                flex-basis: 100%;
-            }
-            .product-title {
-                font-size: 20px;
-            }
-            .product-price {
-                font-size: 16px;
-            }
-            .colors button {
-                padding: 8px;
-            }
+
             .thumbnail-gallery img {
                 width: 60px;
                 height: 60px;
             }
         }
 
-        /* Estilos para a janela de zoom */
         .zoomed-image {
             position: fixed;
             top: 0;
@@ -196,14 +200,17 @@
             align-items: center;
             z-index: 1000;
         }
+
         .zoomed-image img {
             max-width: 90%;
             max-height: 90%;
             transition: transform 0.3s ease;
         }
+
         .zoomed-image.open {
             display: flex;
         }
+
         .zoomed-image .close-btn {
             position: absolute;
             top: 20px;
@@ -214,17 +221,35 @@
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 50%;
             padding: 10px;
-            width: 50px;
-            height: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .info-section {
+            background-color: #f4f4f4;
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-section h3 {
+            font-size: 28px;
+            color: #ff0055;
+            margin-bottom: 20px;
+        }
+
+        .info-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
         }
     </style>
 </head>
 <body>
     <div class="banner-container">
-        <!-- Banner de fundo -->
         <div id="fundo"></div>
     </div>
 
@@ -244,14 +269,14 @@
             </div>
         </div>
 
+        <!-- Primeiro Produto -->
         <div class="product-section">
             <div class="product-image">
-                <img id="main-image" src="large_roxa.jpg" alt="Coqueteleira" onclick="zoomImage(this)">
+                <img id="main-image" src="large_roxa.jpg" alt="Coqueteleira Roxa" onclick="zoomImage(this)">
             </div>
             <div class="product-details">
                 <h2 class="product-title">Coqueteleira DFE FIT 600 ML</h2>
                 <p class="product-price">R$ 25,00</p>
-
                 <div class="colors">
                     <p>Cor:</p>
                     <button onclick="changeImage('large_roxa.jpg')">Roxa</button>
@@ -260,79 +285,107 @@
                     <button onclick="changeImage('large_pink.jpg')">Pink</button>
                     <button onclick="changeImage('large_azul_tifanni.jpg')">Azul Tiffany</button>
                 </div>
-
                 <a href="https://wa.me/5515997265082" target="_blank" class="whatsapp-button">
                     <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
                 </a>
-
                 <div class="thumbnail-gallery">
-                    <img src="large_roxa.jpg" alt="Roxa" onclick="changeImage('large_roxa.jpg')">
-                    <img src="large_branco_perolado.jpg" alt="Branco Perolado" onclick="changeImage('large_branco_perolado.jpg')">
-                    <img src="large_preto_fume.jpg" alt="Preto Fumê" onclick="changeImage('large_preto_fume.jpg')">
-                    <img src="large_azul_tifanni.jpg" alt="Azul Tiffany" onclick="changeImage('large_azul_tifanni.jpg')">
+                    <img src="large_roxa.jpg" alt="Coqueteleira Roxa" onclick="changeImage('large_roxa.jpg')">
+                    <img src="large_branco_perolado.jpg" alt="Coqueteleira Branco Perolado" onclick="changeImage('large_branco_perolado.jpg')">
+                    <img src="large_preto_fume.jpg" alt="Coqueteleira Preto Fumê" onclick="changeImage('large_preto_fume.jpg')">
+                    <img src="large_azul_tifanni.jpg" alt="Coqueteleira Azul Tiffany" onclick="changeImage('large_azul_tifanni.jpg')">
+                    <img src="large_pink.jpg" alt="Coqueteleira Pink" onclick="changeImage('large_pink.jpg')">
                 </div>
             </div>
         </div>
 
+        <!-- Segundo Produto -->
+        <div class="product-section">
+            <div class="product-image">
+                <img id="main-image-2" src="tubinho_vermelho.jpg" alt="Garrafa Vermelha" onclick="zoomImage(this)">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Garrafinha DFE 500 ML</h2>
+                <p class="product-price">R$ 10,50</p>
+                <div class="colors">
+                    <p>Cor:</p>
+                    <button onclick="changeImageSecondProduct('tubinho_vermelho.jpg')">Vermelho</button>
+                    <button onclick="changeImageSecondProduct('tubinho_preto.jpg')">Preto</button>
+                    <button onclick="changeImageSecondProduct('tubinho_rosa.jpg')">Rosa</button>
+                </div>
+                <a href="https://wa.me/5515997265082" target="_blank" class="whatsapp-button">
+                    <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                </a>
+                <div class="thumbnail-gallery">
+                    <img src="tubinho_vermelho.jpg" alt="Garrafa Vermelha" onclick="changeImageSecondProduct('tubinho_vermelho.jpg')">
+                    <img src="tubinho_preto.jpg" alt="Garrafa Preta" onclick="changeImageSecondProduct('tubinho_preto.jpg')">
+                    <img src="tubinho_rosa.jpg" alt="Garrafa Rosa" onclick="changeImageSecondProduct('tubinho_rosa.jpg')">
+                </div>
+            </div>
+        </div>
+
+        <!-- Terceiro Produto -->
+        <div class="product-section">
+            <div class="product-image">
+                <img id="main-image-3" src="galao_azul.jpg" alt="Garrafa Azul 5L" onclick="zoomImage(this)">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Garra DFE 1L</h2>
+                <p class="product-price">R$ 18,00</p>
+                <div class="colors">
+                    <p>Cor:</p>
+                    <button onclick="changeImageThirdProduct('galao_azul.jpg')">Azul</button>
+                    <button onclick="changeImageThirdProduct('galao_rosa.jpg')">Rosa</button>
+                    <button onclick="changeImageThirdProduct('galao_vermelho.jpg')">Vermelho</button>
+                </div>
+                <a href="https://wa.me/5515997265082" target="_blank" class="whatsapp-button">
+                    <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                </a>
+                <div class="thumbnail-gallery">
+                    <img src="galao_azul.jpg" alt="Garrafa Azul 5L" onclick="changeImageThirdProduct('galao_azul.jpg')">
+                    <img src="galao_rosa.jpg" alt="Garrafa Rosa 5L" onclick="changeImageThirdProduct('galao_rosa.jpg')">
+                    <img src="galao_vermelho.jpg" alt="Garrafa Vermelha 5L" onclick="changeImageThirdProduct('galao_vermelho.jpg')">
+                </div>
+            </div>
+        </div>
+
+        <div class="zoomed-image" id="zoomed-image">
+            <span class="close-btn" onclick="closeZoom()">&times;</span>
+            <img src="" alt="Imagem ampliada" id="zoomed-img">
+        </div>
+
+        <!-- Informações -->
         <div class="info-section">
             <h3>Informações</h3>
             <p>🌟 Prepare-se para a revolução das coqueteleiras! 🌟</p>
-            <p>Estamos empolgados em anunciar que nosso mais novo lançamento chegou: Coqueteleiras DFE FIT! ✅💪🏽</p>
+            <p>Estamos empolgados em anunciar que nosso mais novo lançamento Chegou : Coqueteleiras DFE FIT! ✅💪🏽</p>
             <p>Com um design moderno e vibrante, essas coqueteleiras são perfeitas para aqueles que buscam alta performance. Cheias de vida e cores, elas foram criadas para inspirar o seu melhor desempenho!</p>
             <p>Não fique de fora dessa! Transforme sua rotina de treinos com estilo e eficiência!</p>
         </div>
     </div>
 
-    <div class="footer-whatsapp">
-        <a href="https://wa.me/5515997265082" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
-
-    <!-- Zoom Image Modal -->
-    <div id="zoomed-image" class="zoomed-image" onclick="closeZoom(event)">
-        <span class="close-btn" onclick="closeZoom(event)">&times;</span>
-        <img id="zoomed-img" src="" alt="Zoomed Image">
-        <button class="carousel-button prev" onclick="prevImage()">&#10094;</button>
-        <button class="carousel-button next" onclick="nextImage()">&#10095;</button>
-    </div>
-
     <script>
-        let images = [
-            "large_roxa.jpg", 
-            "large_branco_perolado.jpg", 
-            "large_preto_fume.jpg", 
-            "large_pink.jpg", 
-            "large_azul_tifanni.jpg"
-        ];
-        let currentIndex = 0;
-
-        function changeImage(imageUrl) {
-            document.getElementById('main-image').src = imageUrl;
+        function changeImage(imageSrc) {
+            document.getElementById('main-image').src = imageSrc;
         }
 
-        function zoomImage(image) {
+        function zoomImage(element) {
+            const zoomedImage = document.getElementById('zoomed-image');
             const zoomedImg = document.getElementById('zoomed-img');
-            const zoomModal = document.getElementById('zoomed-image');
-            zoomedImg.src = image.src;
-            zoomModal.classList.add('open');
+            zoomedImg.src = element.src;
+            zoomedImage.classList.add('open');
         }
 
-        function closeZoom(event) {
-            const zoomModal = document.getElementById('zoomed-image');
-            if (event.target === zoomModal || event.target.classList.contains('close-btn')) {
-                zoomModal.classList.remove('open');
-            }
+        function closeZoom() {
+            const zoomedImage = document.getElementById('zoomed-image');
+            zoomedImage.classList.remove('open');
         }
 
-        function prevImage() {
-            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-            document.getElementById('zoomed-img').src = images[currentIndex];
+        function changeImageSecondProduct(imageSrc) {
+            document.getElementById('main-image-2').src = imageSrc;
         }
 
-        function nextImage() {
-            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-            document.getElementById('zoomed-img').src = images[currentIndex];
+        function changeImageThirdProduct(imageSrc) {
+            document.getElementById('main-image-3').src = imageSrc;
         }
     </script>
 </body>
