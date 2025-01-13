@@ -282,7 +282,7 @@
                     <button onclick="changeImage('large_roxa.jpg')">Roxa</button>
                     <button onclick="changeImage('large_branco_perolado.jpg')">Branco Perolado</button>
                     <button onclick="changeImage('large_preto_fume.jpg')">Preto Fumê</button>
-                    <button onclick="changeImage('large_rosa.jpg')">Pink</button> <!-- Nome alterado para large_rosa.jpg -->
+                    <button onclick="changeImage('large_pink.jpg')">Pink</button>
                     <button onclick="changeImage('large_azul_tifanni.jpg')">Azul Tiffany</button>
                 </div>
                 <a href="https://wa.me/5515997265082" target="_blank" class="whatsapp-button">
@@ -293,7 +293,57 @@
                     <img src="large_branco_perolado.jpg" alt="Coqueteleira Branco Perolado" onclick="changeImage('large_branco_perolado.jpg')">
                     <img src="large_preto_fume.jpg" alt="Coqueteleira Preto Fumê" onclick="changeImage('large_preto_fume.jpg')">
                     <img src="large_azul_tifanni.jpg" alt="Coqueteleira Azul Tiffany" onclick="changeImage('large_azul_tifanni.jpg')">
-                    <img src="large_rosa.jpg" alt="Coqueteleira Pink" onclick="changeImage('large_rosa.jpg')"> <!-- Nome alterado para large_rosa.jpg -->
+                    <img src="large_pink.jpg" alt="Coqueteleira Pink" onclick="changeImage('large_pink.jpg')">
+                </div>
+            </div>
+        </div>
+
+        <!-- Segundo Produto -->
+        <div class="product-section">
+            <div class="product-image">
+                <img id="main-image-2" src="tubinho_vermelho.jpg" alt="Garrafa Vermelha" onclick="zoomImage(this)">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Garrafa DFE 500 ML</h2>
+                <p class="product-price">R$ 10,90</p>
+                <div class="colors">
+                    <p>Cor:</p>
+                    <button onclick="changeImageSecondProduct('tubinho_vermelho.jpg')">Vermelho</button>
+                    <button onclick="changeImageSecondProduct('tubinho_preto.jpg')">Preto</button>
+                    <button onclick="changeImageSecondProduct('tubinho_rosa.jpg')">Rosa</button>
+                </div>
+                <a href="https://wa.me/5515997265082" target="_blank" class="whatsapp-button">
+                    <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                </a>
+                <div class="thumbnail-gallery">
+                    <img src="tubinho_vermelho.jpg" alt="Garrafa Vermelha" onclick="changeImageSecondProduct('tubinho_vermelho.jpg')">
+                    <img src="tubinho_preto.jpg" alt="Garrafa Preta" onclick="changeImageSecondProduct('tubinho_preto.jpg')">
+                    <img src="tubinho_rosa.jpg" alt="Garrafa Rosa" onclick="changeImageSecondProduct('tubinho_rosa.jpg')">
+                </div>
+            </div>
+        </div>
+
+        <!-- Terceiro Produto -->
+        <div class="product-section">
+            <div class="product-image">
+                <img id="main-image-3" src="galao_azul.jpg" alt="Garrafa Azul 5L" onclick="zoomImage(this)">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Galão 1L DFE FIT</h2>
+                <p class="product-price">R$ 18,90</p>
+                <div class="colors">
+                    <p>Cor:</p>
+                    <button onclick="changeImageThirdProduct('galao_azul.jpg')">Azul</button>
+                    <button onclick="changeImageThirdProduct('galao_rosa.jpg')">Rosa</button>
+                    <button onclick="changeImageThirdProduct('galao_vermelho.jpg')">Vermelho</button>
+                </div>
+                <a href="https://wa.me/5515997265082" target="_blank" class="whatsapp-button">
+                    <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                </a>
+                <div class="thumbnail-gallery">
+                    <img src="galao_azul.jpg" alt="Garrafa Azul 5L" onclick="changeImageThirdProduct('galao_azul.jpg')">
+                    <img src="galao_rosa.jpg" alt="Garrafa Rosa 5L" onclick="changeImageThirdProduct('galao_rosa.jpg')">
+                    <img src="galao_vermelho.jpg" alt="Garrafa Vermelha 5L" onclick="changeImageThirdProduct('galao_vermelho.jpg')">
                 </div>
             </div>
         </div>
@@ -303,23 +353,40 @@
             <img src="" alt="Imagem ampliada" id="zoomed-img">
         </div>
 
-        <script>
-            function changeImage(imageSrc) {
-                document.getElementById('main-image').src = imageSrc;
-            }
-
-            function zoomImage(element) {
-                const zoomedImage = document.getElementById('zoomed-image');
-                const zoomedImg = document.getElementById('zoomed-img');
-                zoomedImg.src = element.src;
-                zoomedImage.classList.add('open');
-            }
-
-            function closeZoom() {
-                const zoomedImage = document.getElementById('zoomed-image');
-                zoomedImage.classList.remove('open');
-            }
-        </script>
+        <!-- Informações -->
+        <div class="info-section">
+            <h3>Informações</h3>
+            <p>🌟 Prepare-se para a revolução das coqueteleiras! 🌟</p>
+            <p>Estamos empolgados em anunciar que nosso mais novo lançamento Chegou : Coqueteleiras DFE FIT! ✅💪🏽</p>
+            <p>Com um design moderno e vibrante, essas coqueteleiras são perfeitas para aqueles que buscam alta performance. Cheias de vida e cores, elas foram criadas para inspirar o seu melhor desempenho!</p>
+            <p>Não fique de fora dessa! Transforme sua rotina de treinos com estilo e eficiência!</p>
+        </div>
     </div>
+
+    <script>
+        function changeImage(imageSrc) {
+            document.getElementById('main-image').src = imageSrc;
+        }
+
+        function zoomImage(element) {
+            const zoomedImage = document.getElementById('zoomed-image');
+            const zoomedImg = document.getElementById('zoomed-img');
+            zoomedImg.src = element.src;
+            zoomedImage.classList.add('open');
+        }
+
+        function closeZoom() {
+            const zoomedImage = document.getElementById('zoomed-image');
+            zoomedImage.classList.remove('open');
+        }
+
+        function changeImageSecondProduct(imageSrc) {
+            document.getElementById('main-image-2').src = imageSrc;
+        }
+
+        function changeImageThirdProduct(imageSrc) {
+            document.getElementById('main-image-3').src = imageSrc;
+        }
+    </script>
 </body>
 </html>
