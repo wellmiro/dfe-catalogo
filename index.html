@@ -285,7 +285,7 @@
                     <button onclick="changeImage('large_rosa.jpg')">Pink</button>
                     <button onclick="changeImage('large_azul_tifanni.jpg')">Azul Tiffany</button>
                 </div>
-                <a href="https://wa.me/5515997265082" target="_blank" class="whatsapp-button">
+                <a href="https://wa.me/5515997265082?text=Olá!%20Tenho%20interesse%20no%20Coqueteleira%20DFE%20FIT%20600%20ML.%20Preço:%20R$%2025,00." target="_blank" class="whatsapp-button">
                     <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
                 </a>
                 <div class="thumbnail-gallery">
@@ -312,7 +312,7 @@
                     <button onclick="changeImageSecondProduct('tubinho_preto.jpg')">Preto</button>
                     <button onclick="changeImageSecondProduct('tubinho_rosa.jpg')">Rosa</button>
                 </div>
-                <a href="https://wa.me/5515997265082" target="_blank" class="whatsapp-button">
+                <a href="https://wa.me/5515997265082?text=Olá!%20Tenho%20interesse%20na%20Garrafa%20DFE%20500%20ML.%20Preço:%20R$%2010,90." target="_blank" class="whatsapp-button">
                     <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
                 </a>
                 <div class="thumbnail-gallery">
@@ -337,7 +337,7 @@
                     <button onclick="changeImageThirdProduct('galao_rosa.jpg')">Rosa</button>
                     <button onclick="changeImageThirdProduct('galao_vermelho.jpg')">Vermelho</button>
                 </div>
-                <a href="https://wa.me/5515997265082" target="_blank" class="whatsapp-button">
+                <a href="https://wa.me/5515997265082?text=Olá!%20Tenho%20interesse%20no%20Galão%201L%20DFE%20FIT.%20Preço:%20R$%2018,90." target="_blank" class="whatsapp-button">
                     <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
                 </a>
                 <div class="thumbnail-gallery">
@@ -354,69 +354,50 @@
                 <img id="main-image-4" src="mola1.jpg" alt="Mola Inox" onclick="zoomImage(this)">
             </div>
             <div class="product-details">
-                <h2 class="product-title">Mola Inox Mixer</h2>
+                <h2 class="product-title">Mola Inox Mixer - Acessório para Coqueteleira </h2>
                 <p class="product-price">R$ 3,50</p>
-                <a href="https://wa.me/5515997265082" target="_blank" class="whatsapp-button">
+                <a href="https://wa.me/5515997265082?text=Olá!%20Tenho%20interesse%20na%20Mola%20Inox%20Mixer.%20Preço:%20R$%203,50." target="_blank" class="whatsapp-button">
                     <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
                 </a>
-                <div class="thumbnail-gallery">
-                    <img src="mola1.jpg" alt="Mola 1" onclick="changeImageMola('mola1.jpg')">
-                    <img src="mola2.jpg" alt="Mola 2" onclick="changeImageMola('mola2.jpg')">
-                </div>
             </div>
         </div>
 
     </div>
 
-    <!-- Zoom Image Modal -->
-    <div class="zoomed-image" id="zoomedImageModal">
-        <span class="close-btn" onclick="closeZoom()">&times;</span>
-        <img id="zoomedImage" src="" alt="Zoomed Image">
-    </div>
-
-    <div class="info-section">
-        <h3>Sobre a DFE Fitness</h3>
-        <p>Oferecemos produtos de alta qualidade para melhorar sua rotina fitness. Conheça a linha completa e tenha a experiência que você merece!</p>
-    </div>
-
-    <script>
-        let zoomedImageModal = document.getElementById('zoomedImageModal');
-        let zoomedImage = document.getElementById('zoomedImage');
-
-        function zoomImage(element) {
-            zoomedImageModal.classList.add('open');
-            zoomedImage.src = element.src;
-        }
-
-        function closeZoom() {
-            zoomedImageModal.classList.remove('open');
-        }
-
-        // Função para trocar a imagem da coqueteleira
-        function changeImage(imageSrc) {
-            document.getElementById('main-image').src = imageSrc;
-        }
-
-        // Função para trocar a imagem da garrafa
-        function changeImageSecondProduct(imageSrc) {
-            document.getElementById('main-image-2').src = imageSrc;
-        }
-
-        // Função para trocar a imagem do galão
-        function changeImageThirdProduct(imageSrc) {
-            document.getElementById('main-image-3').src = imageSrc;
-        }
-
-        // Função para trocar a imagem da mola
-        function changeImageMola(imageSrc) {
-            document.getElementById('main-image-4').src = imageSrc;
-        }
-    </script>
-
     <div class="footer-whatsapp">
-        <a href="https://wa.me/5515997265082" target="_blank">
+        <a href="https://wa.me/5515997265082?text=Olá%2C%20preciso%20de%20informações%20sobre%20os%20produtos%20da%20DFE%20FIT." target="_blank">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
+
+    <div class="zoomed-image" id="zoomed-image">
+        <img id="zoomed-img" src="" alt="Zoomed Image">
+        <span class="close-btn" onclick="closeZoom()">&times;</span>
+    </div>
+
+    <script>
+        function changeImage(image) {
+            document.getElementById('main-image').src = image;
+        }
+
+        function changeImageSecondProduct(image) {
+            document.getElementById('main-image-2').src = image;
+        }
+
+        function changeImageThirdProduct(image) {
+            document.getElementById('main-image-3').src = image;
+        }
+
+        function zoomImage(imgElement) {
+            var zoomedImage = document.getElementById('zoomed-image');
+            var zoomedImg = document.getElementById('zoomed-img');
+            zoomedImg.src = imgElement.src;
+            zoomedImage.classList.add('open');
+        }
+
+        function closeZoom() {
+            document.getElementById('zoomed-image').classList.remove('open');
+        }
+    </script>
 </body>
 </html>
