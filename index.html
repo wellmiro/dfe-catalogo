@@ -47,6 +47,7 @@
             justify-content: space-around;
             padding: 20px 0;
             text-align: center;
+            font-family: "Times New Roman", Times, serif; /* Font original */
         }
 
         .category {
@@ -67,6 +68,11 @@
 
         .category:hover i {
             color: #ff6b6b;
+        }
+
+        .category:focus i,
+        .category:active i {
+            color: #FF0055 !important;
         }
 
         .product-section {
@@ -254,23 +260,24 @@
     </div>
 
     <div class="container">
+        <!-- Seções de Categorias com Links de Âncoras -->
         <div class="categories">
-            <div class="category">
-                <i class="fas fa-dumbbell"></i>
-                <p>Acessórios</p>
-            </div>
-            <div class="category">
+            <a href="#coqueteleira" class="category">
                 <i class="fas fa-blender"></i>
                 <p>Coqueteleiras</p>
-            </div>
-            <div class="category">
+            </a>
+            <a href="#garrafa" class="category">
                 <i class="fas fa-tint"></i>
                 <p>Garrafas</p>
-            </div>
+            </a>
+            <a href="#mola" class="category">
+                <i class="fas fa-dumbbell"></i>
+                <p>Acessórios</p>
+            </a>
         </div>
 
-        <!-- Primeiro Produto -->
-        <div class="product-section">
+        <!-- Seção Coqueteleira -->
+        <div class="product-section" id="coqueteleira">
             <div class="product-image">
                 <img id="main-image" src="large_roxa.jpg" alt="Coqueteleira Roxa" onclick="zoomImage(this)">
             </div>
@@ -285,7 +292,7 @@
                     <button onclick="changeImage('large_rosa.jpg')">Pink</button>
                     <button onclick="changeImage('large_azul_tifanni.jpg')">Azul Tiffany</button>
                 </div>
-                <a href="https://wa.me/5515997265082" target="_blank" class="whatsapp-button">
+                <a href="https://wa.me/5515997265082?text=Olá! Tenho interesse na Coqueteleira DFE FIT 600 ML. Preço: R$ 25,00." target="_blank" class="whatsapp-button">
                     <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
                 </a>
                 <div class="thumbnail-gallery">
@@ -298,8 +305,8 @@
             </div>
         </div>
 
-        <!-- Segundo Produto -->
-        <div class="product-section">
+        <!-- Seção Garrafas -->
+        <div class="product-section" id="garrafa">
             <div class="product-image">
                 <img id="main-image-2" src="tubinho_vermelho.jpg" alt="Garrafa Vermelha" onclick="zoomImage(this)">
             </div>
@@ -312,7 +319,7 @@
                     <button onclick="changeImageSecondProduct('tubinho_preto.jpg')">Preto</button>
                     <button onclick="changeImageSecondProduct('tubinho_rosa.jpg')">Rosa</button>
                 </div>
-                <a href="https://wa.me/5515997265082" target="_blank" class="whatsapp-button">
+                <a href="https://wa.me/5515997265082?text=Olá! Tenho interesse na Garrafa DFE 500 ML. Preço: R$ 10,90." target="_blank" class="whatsapp-button">
                     <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
                 </a>
                 <div class="thumbnail-gallery">
@@ -323,69 +330,69 @@
             </div>
         </div>
 
-        <!-- Terceiro Produto -->
-        <div class="product-section">
+        <!-- Seção Mola -->
+        <div class="product-section" id="mola">
             <div class="product-image">
-                <img id="main-image-3" src="galao_azul.jpg" alt="Garrafa Azul 5L" onclick="zoomImage(this)">
+                <img id="main-image-3" src="mola1.jpg" alt="Mola 1" onclick="zoomImage(this)">
+                <img id="main-image-4" src="mola2.jpg" alt="Mola 2" onclick="zoomImage(this)" style="display:none;">
             </div>
             <div class="product-details">
-                <h2 class="product-title">Galão 1L DFE FIT</h2>
-                <p class="product-price">R$ 18,90</p>
-                <div class="colors">
-                    <p>Cor:</p>
-                    <button onclick="changeImageThirdProduct('galao_azul.jpg')">Azul</button>
-                    <button onclick="changeImageThirdProduct('galao_rosa.jpg')">Rosa</button>
-                    <button onclick="changeImageThirdProduct('galao_vermelho.jpg')">Vermelho</button>
-                </div>
-                <a href="https://wa.me/5515997265082" target="_blank" class="whatsapp-button">
+                <h2 class="product-title">Mola DFE</h2>
+                <p class="product-price">R$ 3,50</p>
+                <a href="https://wa.me/5515997265082?text=Olá! Tenho interesse na Mola DFE. Preço: R$ 3,50." target="_blank" class="whatsapp-button">
                     <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
                 </a>
                 <div class="thumbnail-gallery">
-                    <img src="galao_azul.jpg" alt="Garrafa Azul 5L" onclick="changeImageThirdProduct('galao_azul.jpg')">
-                    <img src="galao_rosa.jpg" alt="Garrafa Rosa 5L" onclick="changeImageThirdProduct('galao_rosa.jpg')">
-                    <img src="galao_vermelho.jpg" alt="Garrafa Vermelha 5L" onclick="changeImageThirdProduct('galao_vermelho.jpg')">
+                    <img src="mola1.jpg" alt="Mola 1" onclick="changeImageThirdProduct('mola1.jpg')">
+                    <img src="mola2.jpg" alt="Mola 2" onclick="changeImageThirdProduct('mola2.jpg')">
                 </div>
             </div>
         </div>
 
-        <div class="zoomed-image" id="zoomed-image">
-            <span class="close-btn" onclick="closeZoom()">&times;</span>
-            <img src="" alt="Imagem ampliada" id="zoomed-img">
-        </div>
+    </div>
 
-        <!-- Informações -->
-        <div class="info-section">
-            <h3>Informações</h3>
-            <p>🌟 Prepare-se para a revolução das coqueteleiras! 🌟</p>
-            <p>Estamos empolgados em anunciar que nosso mais novo lançamento Chegou : Coqueteleiras DFE FIT! ✅💪🏽</p>
-            <p>Com um design moderno e vibrante, essas coqueteleiras são perfeitas para aqueles que buscam alta performance. Cheias de vida e cores, elas foram criadas para inspirar o seu melhor desempenho!</p>
-            <p>Não fique de fora dessa! Transforme sua rotina de treinos com estilo e eficiência!</p>
-        </div>
+    <!-- Informações -->
+    <div class="info-section">
+        <h3>Informações</h3>
+        <p>🌟 Prepare-se para a revolução das coqueteleiras! 🌟</p>
+        <p>Estamos empolgados em anunciar que nosso mais novo lançamento Chegou : Coqueteleiras DFE FIT! ✅💪🏽</p>
+        <p>Com um design moderno e vibrante, essas coqueteleiras são perfeitas para aqueles que buscam alta performance. Cheias de vida e cores, elas foram criadas para inspirar o seu melhor desempenho!</p>
+        <p>Não fique de fora dessa! Transforme sua rotina de treinos com estilo e eficiência!</p>
+    </div>
+
+    <div class="zoomed-image" id="zoomed-image">
+        <span class="close-btn" onclick="closeZoom()">×</span>
+        <img id="zoomed-img" src="" alt="">
+    </div>
+
+    <div class="footer-whatsapp">
+        <a href="https://wa.me/5515997265082?text=Olá! Estou interessado nos produtos DFE Fitness." target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     </div>
 
     <script>
-        function changeImage(imageSrc) {
-            document.getElementById('main-image').src = imageSrc;
+        function changeImage(image) {
+            document.getElementById("main-image").src = image;
         }
 
-        function zoomImage(element) {
-            const zoomedImage = document.getElementById('zoomed-image');
-            const zoomedImg = document.getElementById('zoomed-img');
-            zoomedImg.src = element.src;
-            zoomedImage.classList.add('open');
+        function changeImageSecondProduct(image) {
+            document.getElementById("main-image-2").src = image;
+        }
+
+        function changeImageThirdProduct(image) {
+            document.getElementById("main-image-3").src = image;
+        }
+
+        function zoomImage(image) {
+            const zoomedImage = document.getElementById("zoomed-image");
+            const zoomedImg = document.getElementById("zoomed-img");
+            zoomedImg.src = image.src;
+            zoomedImage.classList.add("open");
         }
 
         function closeZoom() {
-            const zoomedImage = document.getElementById('zoomed-image');
-            zoomedImage.classList.remove('open');
-        }
-
-        function changeImageSecondProduct(imageSrc) {
-            document.getElementById('main-image-2').src = imageSrc;
-        }
-
-        function changeImageThirdProduct(imageSrc) {
-            document.getElementById('main-image-3').src = imageSrc;
+            document.getElementById("zoomed-image").classList.remove("open");
         }
     </script>
 </body>
