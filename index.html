@@ -270,6 +270,10 @@
                 <i class="fas fa-tint"></i>
                 <p>Garrafas</p>
             </a>
+            <a href="#galao" class="category">
+                <i class="fas fa-tint"></i>
+                <p>Galões</p>
+            </a>
             <a href="#mola" class="category">
                 <i class="fas fa-dumbbell"></i>
                 <p>Acessórios</p>
@@ -330,6 +334,31 @@
             </div>
         </div>
 
+        <!-- Seção Galão -->
+        <div class="product-section" id="galao">
+            <div class="product-image">
+                <img id="main-image-5" src="galao_azul.jpg" alt="Galão Azul" onclick="zoomImage(this)">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Galão 1L DFE FIT</h2>
+                <p class="product-price">R$ 18,90</p>
+                <div class="colors">
+                    <p>Cor:</p>
+                    <button onclick="changeImageFifthProduct('galao_azul.jpg')">Azul</button>
+                    <button onclick="changeImageFifthProduct('galao_rosa.jpg')">Rosa</button>
+                    <button onclick="changeImageFifthProduct('galao_vermelho.jpg')">Vermelho</button>
+                </div>
+                <a href="https://wa.me/5515997265082?text=Olá! Tenho interesse no Galão 1L DFE FIT. Preço: R$ 18,90." target="_blank" class="whatsapp-button">
+                    <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                </a>
+                <div class="thumbnail-gallery">
+                    <img src="galao_azul.jpg" alt="Galão Azul" onclick="changeImageFifthProduct('galao_azul.jpg')">
+                    <img src="galao_rosa.jpg" alt="Galão Rosa" onclick="changeImageFifthProduct('galao_rosa.jpg')">
+                    <img src="galao_vermelho.jpg" alt="Galão Vermelho" onclick="changeImageFifthProduct('galao_vermelho.jpg')">
+                </div>
+            </div>
+        </div>
+
         <!-- Seção Mola -->
         <div class="product-section" id="mola">
             <div class="product-image">
@@ -349,51 +378,32 @@
             </div>
         </div>
 
-    </div>
-
-    <!-- Informações -->
-    <div class="info-section">
-        <h3>Informações</h3>
-        <p>🌟 Prepare-se para a revolução das coqueteleiras! 🌟</p>
-        <p>Estamos empolgados em anunciar que nosso mais novo lançamento Chegou : Coqueteleiras DFE FIT! ✅💪🏽</p>
-        <p>Com um design moderno e vibrante, essas coqueteleiras são perfeitas para aqueles que buscam alta performance. Cheias de vida e cores, elas foram criadas para inspirar o seu melhor desempenho!</p>
-        <p>Não fique de fora dessa! Transforme sua rotina de treinos com estilo e eficiência!</p>
-    </div>
-
-    <div class="zoomed-image" id="zoomed-image">
-        <span class="close-btn" onclick="closeZoom()">×</span>
-        <img id="zoomed-img" src="" alt="">
+        <!-- Seção Info -->
+        <div class="info-section">
+            <h3>Sobre nós</h3>
+            <p>Na DFE Fitness, oferecemos produtos de alta qualidade para te acompanhar em sua jornada fitness. De coqueteleiras práticas até acessórios inovadores, temos tudo o que você precisa para alcançar seus objetivos com estilo!</p>
+        </div>
     </div>
 
     <div class="footer-whatsapp">
-        <a href="https://wa.me/5515997265082?text=Olá! Estou interessado nos produtos DFE Fitness." target="_blank">
+        <a href="https://wa.me/5515997265082?text=Olá! Gostaria de saber mais sobre seus produtos." target="_blank">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
 
+    <!-- Zoom Modal -->
+    <div class="zoomed-image" id="zoomed-image">
+        <img id="zoomed-image-src" src="" alt="">
+        <span class="close-btn" onclick="closeZoom()">&times;</span>
+    </div>
+
     <script>
-        function changeImage(image) {
-            document.getElementById("main-image").src = image;
-        }
-
-        function changeImageSecondProduct(image) {
-            document.getElementById("main-image-2").src = image;
-        }
-
-        function changeImageThirdProduct(image) {
-            document.getElementById("main-image-3").src = image;
-        }
-
         function zoomImage(image) {
-            const zoomedImage = document.getElementById("zoomed-image");
-            const zoomedImg = document.getElementById("zoomed-img");
-            zoomedImg.src = image.src;
-            zoomedImage.classList.add("open");
+            const zoomedImage = document.getElementById('zoomed-image');
+            const zoomedImageSrc = document.getElementById('zoomed-image-src');
+            zoomedImageSrc.src = image.src;
+            zoomedImage.classList.add('open');
         }
 
         function closeZoom() {
-            document.getElementById("zoomed-image").classList.remove("open");
-        }
-    </script>
-</body>
-</html>
+            docume
