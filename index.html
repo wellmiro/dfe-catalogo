@@ -341,38 +341,47 @@
                     <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
                 </a>
                 <div class="thumbnail-gallery">
-                    <img src="galao_azul.jpg" alt="Garrafa Azul 5L" onclick="changeImageThirdProduct('galao_azul.jpg')">
-                    <img src="galao_rosa.jpg" alt="Garrafa Rosa 5L" onclick="changeImageThirdProduct('galao_rosa.jpg')">
-                    <img src="galao_vermelho.jpg" alt="Garrafa Vermelha 5L" onclick="changeImageThirdProduct('galao_vermelho.jpg')">
+                    <img src="galao_azul.jpg" alt="Galão Azul" onclick="changeImageThirdProduct('galao_azul.jpg')">
+                    <img src="galao_rosa.jpg" alt="Galão Rosa" onclick="changeImageThirdProduct('galao_rosa.jpg')">
+                    <img src="galao_vermelho.jpg" alt="Galão Vermelho" onclick="changeImageThirdProduct('galao_vermelho.jpg')">
                 </div>
             </div>
         </div>
 
-        <!-- Acessórios -->
-        <div id="acessorios" class="product-section">
+        <!-- Mola -->
+        <div id="mola" class="product-section">
             <div class="product-image">
                 <img id="main-image-4" src="mola1.jpg" alt="Mola Inox" onclick="zoomImage(this)">
             </div>
             <div class="product-details">
-                <h2 class="product-title">Mola Inox Mixer - Acessório para Coqueteleira </h2>
+                <h2 class="product-title">Mola Inox Mixer</h2>
                 <p class="product-price">R$ 3,50</p>
                 <a href="https://wa.me/5515997265082?text=Olá!%20Tenho%20interesse%20na%20Mola%20Inox%20Mixer.%20Preço:%20R$%203,50." target="_blank" class="whatsapp-button">
                     <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
                 </a>
+                <div class="thumbnail-gallery">
+                    <img src="mola1.jpg" alt="Mola Inox" onclick="changeImageMola('mola1.jpg')">
+                    <img src="mola2.jpg" alt="Mola Inox" onclick="changeImageMola('mola2.jpg')">
+                </div>
             </div>
         </div>
 
+        <!-- Informações -->
+        <div class="info-section">
+            <h3>Sobre nós</h3>
+            <p>Bem-vindo ao DFE Fitness! Nós oferecemos uma seleção de produtos de alta qualidade para o seu desempenho nos treinos. A nossa missão é fornecer acessórios e equipamentos de fitness para melhorar a sua experiência e ajudá-lo a alcançar seus objetivos.</p>
+        </div>
     </div>
 
     <div class="footer-whatsapp">
-        <a href="https://wa.me/5515997265082?text=Olá%2C%20preciso%20de%20informações%20sobre%20os%20produtos%20da%20DFE%20FIT." target="_blank">
+        <a href="https://wa.me/5515997265082" target="_blank">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
 
-    <div class="zoomed-image" id="zoomed-image">
-        <img id="zoomed-img" src="" alt="Zoomed Image">
-        <span class="close-btn" onclick="closeZoom()">&times;</span>
+    <div id="zoomed-image" class="zoomed-image">
+        <img src="" alt="Zoomed Image">
+        <div class="close-btn" onclick="closeZoom()">×</div>
     </div>
 
     <script>
@@ -388,10 +397,14 @@
             document.getElementById('main-image-3').src = image;
         }
 
-        function zoomImage(imgElement) {
-            var zoomedImage = document.getElementById('zoomed-image');
-            var zoomedImg = document.getElementById('zoomed-img');
-            zoomedImg.src = imgElement.src;
+        function changeImageMola(image) {
+            document.getElementById('main-image-4').src = image;
+        }
+
+        function zoomImage(image) {
+            const zoomedImage = document.getElementById('zoomed-image');
+            const zoomedImg = zoomedImage.querySelector('img');
+            zoomedImg.src = image.src;
             zoomedImage.classList.add('open');
         }
 
