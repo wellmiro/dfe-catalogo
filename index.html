@@ -81,7 +81,7 @@
             text-align: center;
         }
 
-        .product-image img {
+        .product-image img, .product-image video {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
@@ -89,7 +89,7 @@
             transition: transform 0.3s ease;
         }
 
-        .product-image img:hover {
+        .product-image img:hover, .product-image video:hover {
             transform: scale(1.05);
         }
 
@@ -330,86 +330,89 @@
             </div>
             <div class="product-details">
                 <h2 class="product-title">Galão 1L DFE FIT</h2>
-                <p class="product-price">R$ 18,90</p>
+                <p class="product-price">R$ 15,00</p>
                 <div class="colors">
                     <p>Cor:</p>
                     <button onclick="changeImageThirdProduct('galao_azul.jpg')">Azul</button>
-                    <button onclick="changeImageThirdProduct('galao_rosa.jpg')">Rosa</button>
-                    <button onclick="changeImageThirdProduct('galao_vermelho.jpg')">Vermelho</button>
+                    <button onclick="changeImageThirdProduct('galao_verde.jpg')">Verde</button>
+                    <button onclick="changeImageThirdProduct('galao_preto.jpg')">Preto</button>
                 </div>
-                <a href="https://wa.me/5515997265082?text=Olá!%20Tenho%20interesse%20no%20Galão%201L%20DFE%20FIT.%20Preço:%20R$%2018,90." target="_blank" class="whatsapp-button">
+                <a href="https://wa.me/5515997265082?text=Olá!%20Tenho%20interesse%20no%20Galão%201L%20DFE%20FIT.%20Preço:%20R$%2015,00." target="_blank" class="whatsapp-button">
                     <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
                 </a>
-                <div class="thumbnail-gallery">
-                    <img src="galao_azul.jpg" alt="Galão Azul" onclick="changeImageThirdProduct('galao_azul.jpg')">
-                    <img src="galao_rosa.jpg" alt="Galão Rosa" onclick="changeImageThirdProduct('galao_rosa.jpg')">
-                    <img src="galao_vermelho.jpg" alt="Galão Vermelho" onclick="changeImageThirdProduct('galao_vermelho.jpg')">
-                </div>
             </div>
         </div>
 
         <!-- Mola -->
         <div id="mola" class="product-section">
             <div class="product-image">
-                <img id="main-image-4" src="mola1.jpg" alt="Mola Inox" onclick="zoomImage(this)">
+                <img src="mola_inox.jpg" alt="Mola Inox Mixer" onclick="zoomImage(this)">
             </div>
             <div class="product-details">
                 <h2 class="product-title">Mola Inox Mixer</h2>
-                <p class="product-price">R$ 3,50</p>
-                <a href="https://wa.me/5515997265082?text=Olá!%20Tenho%20interesse%20na%20Mola%20Inox%20Mixer.%20Preço:%20R$%203,50." target="_blank" class="whatsapp-button">
+                <p class="product-price">R$ 9,00</p>
+                <a href="https://wa.me/5515997265082?text=Olá!%20Tenho%20interesse%20na%20Mola%20Inox%20Mixer.%20Preço:%20R$%209,00." target="_blank" class="whatsapp-button">
                     <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
                 </a>
-                <div class="thumbnail-gallery">
-                    <img src="mola1.jpg" alt="Mola Inox" onclick="changeImageMola('mola1.jpg')">
-                    <img src="mola2.jpg" alt="Mola Inox" onclick="changeImageMola('mola2.jpg')">
-                </div>
             </div>
         </div>
 
-        <!-- Informações -->
-        <div class="info-section">
-            <h3>Sobre nós</h3>
-            <p>Bem-vindo ao DFE Fitness! Nós oferecemos uma seleção de produtos de alta qualidade para o seu desempenho nos treinos. A nossa missão é fornecer acessórios e equipamentos de fitness para melhorar a sua experiência e ajudá-lo a alcançar seus objetivos.</p>
+        <!-- Strap Video -->
+        <div id="strap-video" class="product-section">
+            <div class="product-image">
+                <video width="100%" height="auto" controls>
+                    <source src="strap_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Strap DFE</h2>
+                <p class="product-price">R$ 12,00</p>
+                <div class="thumbnail-gallery">
+                    <img src="strap_thumbnail.jpg" alt="Strap DFE" onclick="playVideo()">
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="footer-whatsapp">
-        <a href="https://wa.me/5515997265082" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
-
+    <!-- Zoomed Image -->
     <div id="zoomed-image" class="zoomed-image">
-        <img src="" alt="Zoomed Image">
+        <img id="zoomed-img" src="" alt="Zoomed Image">
         <div class="close-btn" onclick="closeZoom()">×</div>
     </div>
 
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/5515997265082?text=Olá!" target="_blank" class="footer-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script>
-        function changeImage(image) {
-            document.getElementById('main-image').src = image;
+        function changeImage(imageSrc) {
+            document.getElementById('main-image').src = imageSrc;
         }
 
-        function changeImageSecondProduct(image) {
-            document.getElementById('main-image-2').src = image;
+        function changeImageSecondProduct(imageSrc) {
+            document.getElementById('main-image-2').src = imageSrc;
         }
 
-        function changeImageThirdProduct(image) {
-            document.getElementById('main-image-3').src = image;
+        function changeImageThirdProduct(imageSrc) {
+            document.getElementById('main-image-3').src = imageSrc;
         }
 
-        function changeImageMola(image) {
-            document.getElementById('main-image-4').src = image;
-        }
-
-        function zoomImage(image) {
-            const zoomedImage = document.getElementById('zoomed-image');
-            const zoomedImg = zoomedImage.querySelector('img');
-            zoomedImg.src = image.src;
+        function zoomImage(img) {
+            var zoomedImage = document.getElementById('zoomed-image');
+            var zoomedImg = document.getElementById('zoomed-img');
+            zoomedImg.src = img.src;
             zoomedImage.classList.add('open');
         }
 
         function closeZoom() {
             document.getElementById('zoomed-image').classList.remove('open');
+        }
+
+        function playVideo() {
+            var video = document.querySelector('video');
+            video.play();
         }
     </script>
 </body>
