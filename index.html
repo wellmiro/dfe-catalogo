@@ -192,15 +192,23 @@ body {
         height: 50px;
     }
 
-    #coqueteleira .thumbnail-gallery {
-        overflow-x: auto;
-        white-space: nowrap;
+    #coqueteleira {
+    width: 100%; /* Ajusta a largura do painel para 100% */
     }
 
-    #coqueteleira .thumbnail-gallery img {
-        display: inline-block;
-        margin-right: 10px;
-    }
+#coqueteleira .thumbnail-gallery {
+    overflow-x: initial; /* Remove o scroll horizontal */
+    white-space: normal; /* Permite que as miniaturas quebrem para a próxima linha */
+    display: flex; /* Garante que as miniaturas fiquem em linha */
+    flex-wrap: wrap; /* Permite que as miniaturas quebrem para a próxima linha */
+    justify-content: center; /* Centraliza as miniaturas */
+}
+
+#coqueteleira .thumbnail-gallery img {
+    width: 60px; /* Ajusta a largura das miniaturas */
+    height: 60px; /* Ajusta a altura das miniaturas */
+    margin: 5px; /* Adiciona uma margem entre as miniaturas */
+}
 
     .product-section {
         margin-bottom: 20px;
