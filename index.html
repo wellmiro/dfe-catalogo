@@ -339,6 +339,50 @@ body {
     .footer-whatsapp i {
         font-size: 26px; /* Ajusta o tamanho do ícone para telas menores */
     }
+.footer-panel {
+    background-color: #f0f0f0;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 20px; /* Adicionado: margem superior para separar do painel "Sobre nós" */
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+    font-size: 1.2em;
+    color: #333;
+    text-decoration: none;
+}
+
+.instagram-icon i {
+    color: #ff0055;
+}
+
+.facebook-icon i {
+    color: #1877F2;
+}
+
+.whatsapp-contact a {
+    display: flex;
+    align-items: center;
+    color: #25D366;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.social-text {
+    margin-left: 1px;
+    font-size: 0.9em;
+    color: #555;
+}
     </style>
 </head>
 <body>
@@ -480,10 +524,6 @@ body {
     </div>
 </div>
 
-
-
-
-
 <!-- Script para controlar o Modal -->
 <script>
     function showModalVideo() {
@@ -520,6 +560,25 @@ body {
         <img src="" alt="Zoomed Image">
         <div class="close-btn" onclick="closeZoom()">×</div>
     </div>
+
+<div class="footer-panel">
+    <div class="footer-social">
+        <a href="https://www.instagram.com/dfefitness/" target="_blank" class="social-icon instagram-icon" title="Instagram DFE Fitness">
+            <i class="fab fa-instagram"></i>
+            <span class="social-text">Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/dfefitness" target="_blank" class="social-icon facebook-icon" title="Facebook DFE Fitness">
+            <i class="fab fa-facebook-square"></i>
+            <span class="social-text">Facebook</span>
+        </a>
+        <p class="whatsapp-contact">
+            <a href="https://wa.me/5515997265082" target="_blank" title="WhatsApp DFE Fitness">
+                <i class="fab fa-whatsapp"></i>
+                <span class="social-text">WhatsApp</span>
+            </a>
+        </p>
+    </div>
+</div>
 
     <script>
 function changeImage(image) {
