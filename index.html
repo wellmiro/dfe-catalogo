@@ -161,19 +161,20 @@ body {
             font-size: 20px;
         }
 
-        .thumbnail-gallery {
-           display: flex;
-           gap: 10px;
-           flex-wrap: wrap; /* Adiciona a quebra de linha */
-         }
+.thumbnail-gallery {
+    display: flex;
+    gap: 10px;
+    white-space: nowrap; /* Adicionado */
+    overflow-x: auto; /* Adicionado */
+}
 
-        .thumbnail-gallery img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+.thumbnail-gallery img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
 .info-section {
     background-color: #f4f4f4;
     padding: 40px;
@@ -222,18 +223,19 @@ body {
     }
 
 #coqueteleira .thumbnail-gallery {
-        overflow-x: initial;
-        white-space: normal;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+    display: flex;
+    gap: 10px;
+    white-space: nowrap; /* Adicionado */
+    overflow-x: auto; /* Adicionado */
 }
 
-    #coqueteleira .thumbnail-gallery img {
-        width: 60px;
-        height: 60px;
-        margin: 5px;
-    }
+#coqueteleira .thumbnail-gallery img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
     .product-section {
         margin-bottom: 20px;
