@@ -185,6 +185,7 @@ body {
 @media (max-width: 768px) {
     .product-image, .product-details {
         flex-basis: 100%;
+        width: 100%;
     }
 
     .thumbnail-gallery img {
@@ -197,46 +198,51 @@ body {
     }
 
 #coqueteleira .thumbnail-gallery {
-    overflow-x: initial; /* Remove o scroll horizontal */
-    white-space: normal; /* Permite que as miniaturas quebrem para a próxima linha */
-    display: flex; /* Garante que as miniaturas fiquem em linha */
-    flex-wrap: wrap; /* Permite que as miniaturas quebrem para a próxima linha */
-    justify-content: center; /* Centraliza as miniaturas */
+        overflow-x: initial;
+        white-space: normal;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
 }
 
-#coqueteleira .thumbnail-gallery img {
-    width: 60px; /* Ajusta a largura das miniaturas */
-    height: 60px; /* Ajusta a altura das miniaturas */
-    margin: 5px; /* Adiciona uma margem entre as miniaturas */
-}
+    #coqueteleira .thumbnail-gallery img {
+        width: 60px;
+        height: 60px;
+        margin: 5px;
+    }
 
     .product-section {
         margin-bottom: 20px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .container{
         padding: 10px;
-    }.categories {
-        display: flex; /* Usa flexbox para manter a linha horizontal */
-        justify-content: space-around; /* Distribui os ícones uniformemente */
-        padding: 10px 0; /* Reduz o padding para melhor ajuste em telas menores */
+    }
+
+    .categories {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
     }
 
     .category {
         text-align: center;
-        flex: 1; /* Permite que os ícones se adaptem à largura da tela */
+        flex: 1;
     }
 
     .category i {
-        font-size: 30px; /* Reduz o tamanho dos ícones para melhor ajuste em telas menores */
+        font-size: 30px;
     }
 
     .category p {
-        font-size: 14px; /* Reduz o tamanho do texto para melhor ajuste em telas menores */
+        font-size: 14px;
     }
-	    #fundo {
-        height: 20vh; /* Altura reduzida em telas menores */
-	margin-bottom: 20px;
+
+    #fundo {
+        height: 20vh;
+        margin-bottom: 20px;
     }
 }
 
@@ -570,7 +576,7 @@ thumbnails.forEach(function(thumbnail) {
 function reloadCSS() {
     var links = document.getElementsByTagName('link');
     for (var i = 0; i < links.length; i++) {
-        if (links[i].href.indexOf('style.css') !== -1) {
+        if (links[i].href && links[i].href.indexOf('style.css') !== -1) {
             var newLink = document.createElement('link');
             newLink.rel = 'stylesheet';
             newLink.href = 'style.css?v=' + new Date().getTime();
