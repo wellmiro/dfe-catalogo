@@ -14,7 +14,7 @@
   <style>
 body {
     width: 100vw;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Evita rolagem horizontal */
 }
 
 .container {
@@ -155,9 +155,10 @@ body {
         }
 
         .thumbnail-gallery {
-            display: flex;
-            gap: 10px;
-        }
+           display: flex;
+           gap: 10px;
+           flex-wrap: wrap; /* Adiciona a quebra de linha */
+         }
 
         .thumbnail-gallery img {
             width: 80px;
@@ -167,15 +168,16 @@ body {
             cursor: pointer;
         }
 
-        .footer-whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            padding: 15px;
-            border-radius: 50%;
-            cursor: pointer;
-        }
+.footer-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+}
 
         .footer-whatsapp i {
             color: white;
