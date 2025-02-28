@@ -371,7 +371,8 @@
 <!-- Conjunto Straps DFE FIT -->
 <div id="strap" class="product-section">
     <div class="product-image">
-        <img id="main-image-5" src="straps1.jpg" alt="CONJUNTO STRAPS DFE FIT" onclick="zoomImage(this)">
+        <img id="main-image-5-img" src="straps1.jpg" alt="CONJUNTO STRAPS DFE FIT" style="width: 100%; height: auto;">
+        <video id="main-image-5-video" src="" style="width: 100%; height: auto; display: none;" controls></video>
     </div>
     <div class="product-details">
         <h2 class="product-title">Conjunto Straps DFE FIT</h2>
@@ -380,64 +381,15 @@
             <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
         </a>
         <div class="thumbnail-gallery">
-            <img src="straps1.jpg" alt="CONJUNTO STRAPS DFE FIT" onclick="changeImageStrap('straps1.jpg')">
-            <video width="80" height="80" controls onclick="showModalVideo()">
-                <source src="strap_video.mp4" type="video/mp4">
-                Seu navegador não suporta o elemento de vídeo.
-            </video>
+            <img src="straps1.jpg" alt="CONJUNTO STRAPS DFE FIT" onclick="changeImageStrap('straps1.jpg')" style="width: 80px; height: 80px; object-fit: cover;">
+            <img src="video_thumbnail.jpg" alt="Vídeo Straps" id="video-thumbnail" data-video-src="strap_video.mp4" style="width: 80px; height: 80px; object-fit: cover;">
         </div>
     </div>
 </div>
 
-<!-- Modal para o vídeo -->
-<div id="video-modal" class="video-modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <video id="modal-video" width="100%" controls>
-            <source src="strap_video.mp4" type="video/mp4">
-            Seu navegador não suporta o elemento de vídeo.
-        </video>
-    </div>
-</div>
 
-<!-- Estilos do Modal -->
-<style>
-    .video-modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        justify-content: center;
-        align-items: center;
-    }
 
-    .modal-content {
-        position: relative;
-        max-width: 80%;
-        max-height: 80%;
-        background-color: #fff;
-        padding: 20px;
-        text-align: center;
-    }
 
-    .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        color: #fff;
-        font-size: 30px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    .close-btn:hover {
-        color: #f44336;
-    }
-</style>
 
 <!-- Script para controlar o Modal -->
 <script>
@@ -507,6 +459,61 @@
         function closeZoom() {
             document.getElementById('zoomed-image').classList.remove('open');
         }
+	
+function changeImageStrap(image) {
+    var videoElement = document.getElementById('main-image-5-video');
+    videoElement.pause(); // Pausa o vídeo
+    document.getElementById('main-image-5-img').src = image;
+    document.getElementById('main-image-5-img').style.display = 'block';
+    videoElement.style.display = 'none';
+    videoElement.removeAttribute('autoplay');
+}
+
+document.getElementById('video-thumbnail').addEventListener('click', function() {
+    var videoSrc = this.getAttribute('data-video-src');
+    var videoElement = document.getElementById('main-image-5-video');
+    videoElement.src = videoSrc;
+    videoElement.style.display = 'block';
+    videoElement.setAttribute('autoplay', 'autoplay');
+    document.getElementById('main-image-5-img').style.display = 'none';
+});
+
+document.getElementById('main-image-5-video').addEventListener('click', function() {
+    var videoElement = document.getElementById('main-image-5-video');
+    if (videoElement.getAttribute('controls')) {
+        videoElement.style.display = 'none';
+        videoElement.removeAttribute('autoplay');
+        document.getElementById('main-image-5-img').style.display = 'block';
+    }
+});
+
+// Pausar o vídeo ao clicar em qualquer outro elemento que altere a imagem principal
+function pauseVideo() {
+    var videoElement = document.getElementById('main-image-5-video');
+    videoElement.pause();
+}
+
+// Adicionar evento de clique para todas as imagens dos outros componentes
+var otherImages = document.querySelectorAll('.product-image img');
+otherImages.forEach(function(img) {
+    if (img.id !== 'main-image-5-img') {
+        img.addEventListener('click', pauseVideo);
+    }
+});
+
+// Adicionar evento de clique para os botões de cores
+var colorButtons = document.querySelectorAll('.colors button');
+colorButtons.forEach(function(button) {
+    button.addEventListener('click', pauseVideo);
+});
+
+// Adicionar evento de clique para as miniaturas dos outros componentes
+var thumbnails = document.querySelectorAll('.thumbnail-gallery img');
+thumbnails.forEach(function(thumbnail) {
+    if (thumbnail.id !== 'video-thumbnail' && thumbnail.parentElement.parentElement.id !== 'strap') {
+        thumbnail.addEventListener('click', pauseVideo);
+    }
+});
     </script>
 </body>
 </html>
