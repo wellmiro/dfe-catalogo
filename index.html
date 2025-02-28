@@ -31,11 +31,20 @@ body {
     background-image: url('fundo.png');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     height: 250px;
-    width: 100%;
+    width: 100vw;
     border-radius: 0 0 10px 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+	height: 400px;
 }
+
+    .banner-container {
+    width: 100vw; /* Garante que o contêiner do banner também ocupe 100% da largura */
+    overflow: hidden; /* Adicionado: evita que o conteúdo vaze */
+}
+
 
 .container {
     width: 90%; /* Garante que o banner ocupe toda a largura */
@@ -224,6 +233,7 @@ body {
     width: 100%; /* Ajusta a largura do painel para 100% */
     }
 
+
 #coqueteleira .thumbnail-gallery {
     display: flex;
     gap: 10px;
@@ -404,9 +414,7 @@ body {
     </style>
 </head>
 <body>
-<div class="banner-container">
     <div id="fundo"></div>
-</div>
 
     <div class="container">
         <div class="categories">
