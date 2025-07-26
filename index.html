@@ -432,6 +432,27 @@ body {
             </div>
         </div>
 
+<!-- Camiseta -->	    
+  <div class="container">
+  <div class="product">
+    <img id="main-image-camiseta" src="camiseta1.jpg" alt="Camiseta Personalizada" class="main-image">
+    
+    <div class="thumbnail-gallery">
+      <img src="camiseta1.jpg" alt="Camiseta Frente" onclick="changeImage('main-image-camiseta', 'camiseta1.jpg')">
+      <img src="camiseta2.jpg" alt="Camiseta Costas" onclick="changeImage('main-image-camiseta', 'camiseta2.jpg')">
+      <img src="camiseta3.jpg" alt="Detalhe Estampa" onclick="changeImage('main-image-camiseta', 'camiseta3.jpg')">
+    </div>
+
+    <h1>Camiseta Personalizada</h1>
+    <p>Camiseta de algodão 100%, com estampas exclusivas. Tecido leve e confortável, ideal para uso diário ou brindes promocionais.</p>
+    
+    <div class="product-buttons">
+      <a href="https://wa.me/SEUNUMERO" class="whatsapp-button" target="_blank">Fale conosco no WhatsApp</a>
+    </div>
+  </div>
+</div>
+    
+
         <!-- Coqueteleira -->
         <div id="coqueteleira" class="product-section">
             <div class="product-image">
@@ -712,6 +733,9 @@ thumbnails.forEach(function(thumbnail) {
         thumbnail.addEventListener('click', pauseVideo);
     }
 });
+    function changeImage(imgId, newSrc) {
+    document.getElementById(imgId).src = newSrc;
+  }
     </script>
 </body>
 </html>
