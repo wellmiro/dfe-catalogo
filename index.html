@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DFE Fitness</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-    <style>
-        body {
-            width: 100vw;
-            overflow-x: hidden;
-            background-image: url('background.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-        }
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+  <style>
+body {
+    width: 100vw;
+    overflow-x: hidden; /* Adicionado para remover a barra de rolagem horizontal */
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0;
+}
 
-        #fundo {
-            background-image: url('fundo.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 400px;
-            width: 100vw;
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-        }
+#fundo {
+    background-image: url('fundo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 250px;
+    width: 100vw;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+	height: 400px;
+}
 
-        .banner-container {
-            width: 100vw;
-            overflow: hidden;
-        }
+    .banner-container {
+    width: 100vw; /* Garante que o contêiner do banner também ocupe 100% da largura */
+    overflow: hidden; /* Adicionado: evita que o conteúdo vaze */
+}
+
+
+.container {
+    width: 90%; /* Garante que o banner ocupe toda a largura */
+    margin: -10px auto 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
 
         .categories {
             display: flex;
@@ -53,7 +64,7 @@
 
         .category {
             text-align: center;
-            width: 100%;
+	    width: 100%;
         }
 
         .category i {
@@ -62,32 +73,32 @@
             transition: color 0.3s;
         }
 
-        .category p {
+       .category p {
             margin-top: 10px;
             font-size: 18px;
             font-weight: bold;
-            color: #FF0055;
-        }
+            color: #FF0055; /* Adicione esta linha */
+}
 
         .category:hover i {
             color: #ff6b6b;
         }
 
-        .product-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 40px;
-            width: 100%;
-            text-align: center;
-        }
+.product-section {
+    display: flex; /* Adicionado: layout flexível */
+    flex-wrap: wrap; /* Adicionado: permite que os itens quebrem para a próxima linha */
+    justify-content: center; /* Adicionado: centraliza os itens horizontalmente */
+    margin-bottom: 40px;
+    width: 100%;
+    text-align: center;
+}
 
-        .product-image {
-            width: 50%;
-            margin: 0;
-            box-sizing: border-box;
-            padding: 20px;
-        }
+.product-image {
+    width: 50%; /* Ajustado: ocupa metade da largura em telas maiores */
+    margin: 0; /* Removido: centralização automática */
+    box-sizing: border-box;
+    padding: 20px; /* Adicionado: espaçamento interno */
+}
 
         .product-image img {
             max-width: 100%;
@@ -97,16 +108,21 @@
             transition: transform 0.3s ease;
         }
 
-        .product-details {
-            width: 50%;
-            margin: 0;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: left;
-            box-sizing: border-box;
-        }
+.product-image {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.product-details {
+    width: 50%; /* Ajustado: ocupa metade da largura em telas maiores */
+    margin: 0; /* Removido: centralização automática */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    box-sizing: border-box;
+}
 
         .product-title {
             font-size: 22px;
@@ -138,7 +154,7 @@
         }
 
         .whatsapp-button {
-            display: inline-flex;
+            display: inline-block;
             background-color: #25d366;
             color: white;
             padding: 10px 20px;
@@ -146,6 +162,7 @@
             border-radius: 5px;
             font-size: 16px;
             font-weight: bold;
+            display: flex;
             align-items: center;
             gap: 10px;
             margin-bottom: 20px;
@@ -155,20 +172,117 @@
             font-size: 20px;
         }
 
-        .thumbnail-gallery {
-            display: flex;
-            gap: 10px;
-            white-space: nowrap;
-            overflow-x: auto;
-        }
+.thumbnail-gallery {
+    display: flex;
+    gap: 10px;
+    white-space: nowrap; /* Adicionado */
+    overflow-x: auto; /* Adicionado */
+}
 
-        .thumbnail-gallery img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+.thumbnail-gallery img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.info-section {
+    background-color: #f4f4f4;
+    padding: 40px;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Usar a mesma largura dos outros painéis */
+    margin: 40px auto; /* Centralizar o painel */
+    box-sizing: border-box; /* Adicionado */
+}
+
+.footer-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    padding: 15px 20px; /* Aumenta o padding para tornar o botão maior */
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.footer-whatsapp i {
+    color: white;
+    font-size: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .product-image, .product-details {
+        width: 100%; /* Ajustado: ocupa toda a largura em telas menores */
+        padding: 10px; /* Ajustado: espaçamento interno menor em telas menores */
+    }
+
+    .thumbnail-gallery img {
+        width: 50px;
+        height: 50px;
+    }
+
+    #coqueteleira {
+    width: 100%; /* Ajusta a largura do painel para 100% */
+    }
+
+
+#coqueteleira .thumbnail-gallery {
+    display: flex;
+    gap: 10px;
+    white-space: nowrap; /* Adicionado */
+    overflow-x: auto; /* Adicionado */
+}
+
+#coqueteleira .thumbnail-gallery img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .product-section {
+        margin-bottom: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container{
+        padding: 10px;
+    }
+
+    .categories {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    .category {
+        text-align: center;
+        flex: 1;
+    }
+
+    .category i {
+        font-size: 30px;
+    }
+
+    .category p {
+        font-size: 14px;
+    }
+
+    #fundo {
+        height: 20vh;
+        margin-bottom: 20px;
+    }
+}
 
         .zoomed-image {
             position: fixed;
@@ -208,35 +322,95 @@
             align-items: center;
         }
 
-        @media (max-width: 768px) {
-            .product-image,
-            .product-details {
-                width: 100%;
-                padding: 10px;
-            }
-
-            .thumbnail-gallery img {
-                width: 50px;
-                height: 50px;
-            }
-
-            .categories {
-                padding: 10px 0;
-            }
-
-            .category i {
-                font-size: 30px;
-            }
-
-            .category p {
-                font-size: 14px;
-            }
-
-            #fundo {
-                height: 20vh;
-                margin-bottom: 20px;
-            }
+        .info-section {
+            background-color: #f4f4f4;
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
+        .info-section h3 {
+            font-size: 28px;
+            color: #ff0055;
+            margin-bottom: 20px;
+        }
+
+        .info-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+.footer-whatsapp {
+    position: fixed;
+    bottom: 50px; /* Aumentado o valor para mover o botão para cima */
+    right: 20px;
+    background-color: #25d366;
+    padding: 15px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.footer-whatsapp i {
+    color: white;
+    font-size: 30px;
+}
+.footer-panel {
+    background-color: #f0f0f0;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 20px; /* Adicionado: margem superior para separar do painel "Sobre nós" */
+}
+
+.footer-panel {
+    background-color: #f0f0f0;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+    font-size: 1.2em;
+    color: #333;
+    text-decoration: none;
+}
+
+.instagram-icon i {
+    color: #ff0055;
+}
+
+.facebook-icon i {
+    color: #1877F2;
+}
+
+.whatsapp-contact a {
+    display: flex;
+    align-items: center;
+    color: #25D366;
+    text-decoration: none;
+}
+
+.whatsapp-contact a i { /* Estilo para o ícone do WhatsApp */
+    font-size: 1.2em; /* Aumenta o tamanho do ícone */
+}
+
+.social-text {
+    margin-left: 5px;
+    font-size: 0.9em;
+    color: #555;
+}
     </style>
 </head>
 <body>
@@ -259,77 +433,314 @@
         </div>
 
         <!-- Camiseta -->
-        <div id="camiseta" class="product-section">
-            <div class="product-image">
-                <img id="main-image-camiseta" src="camiseta1.jpg" alt="Camiseta Personalizada" onclick="zoomImage(this)" />
-            </div>
-            <div class="product-details">
-                <h2 class="product-title">Camiseta Personalizada</h2>
-                <p class="product-price">R$ 35,00</p>
-                <div class="colors">
-                    <p>Modelo:</p>
-                    <button onclick="changeImage('main-image-camiseta', 'camiseta1.jpg')">Frente</button>
-                    <button onclick="changeImage('main-image-camiseta', 'camiseta2.jpg')">Costas</button>
-                </div>
-                <a href="https://wa.me/5515997265082?text=Olá!%20Tenho%20interesse%20na%20Camiseta%20Personalizada.%20Preço:%20R$%2035,00." target="_blank" class="whatsapp-button">
-                    <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
-                </a>
-                <div class="thumbnail-gallery">
-                    <img src="camiseta1.jpg" alt="Camiseta Frente" onclick="changeImage('main-image-camiseta', 'camiseta1.jpg')" />
-                    <img src="camiseta2.jpg" alt="Camiseta Costas" onclick="changeImage('main-image-camiseta', 'camiseta2.jpg')" />
-                </div>
-            </div>
+<div id="camiseta" class="product-section">
+    <div class="product-image">
+        <img id="main-image-camiseta" src="camiseta1.jpg" alt="Camiseta Personalizada" onclick="zoomImage(this)">
+    </div>
+    <div class="product-details">
+        <h2 class="product-title">Camiseta Personalizada</h2>
+        <p class="product-price">R$ 35,00</p>
+        <div class="colors">
+            <p>Modelo:</p>
+            <button onclick="changeImageCamiseta('camiseta1.jpg')">Frente</button>
+            <button onclick="changeImageCamiseta('camiseta2.jpg')">Costas</button>
         </div>
+        <a href="https://wa.me/5515997265082?text=Olá!%20Tenho%20interesse%20na%20Camiseta%20Personalizada.%20Preço:%20R$%2035,00." target="_blank" class="whatsapp-button">
+            <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+        </a>
+        <div class="thumbnail-gallery">
+            <img src="camiseta1.jpg" alt="Camiseta Frente" onclick="changeImageCamiseta('camiseta1.jpg')">
+            <img src="camiseta2.jpg" alt="Camiseta Costas" onclick="changeImageCamiseta('camiseta2.jpg')">
+        </div>
+    </div>
+</div>
+
 
         <!-- Coqueteleira -->
         <div id="coqueteleira" class="product-section">
             <div class="product-image">
-                <img id="main-image-coqueteleira" src="large_roxa.jpg" alt="Coqueteleira Roxa" onclick="zoomImage(this)" />
+                <img id="main-image" src="large_roxa.jpg" alt="Coqueteleira Roxa" onclick="zoomImage(this)">
             </div>
             <div class="product-details">
                 <h2 class="product-title">Coqueteleira DFE FIT 600 ML</h2>
                 <p class="product-price">R$ 25,00</p>
-                               <div class="colors">
-                    <p>Escolha a cor:</p>
-                    <button onclick="changeImage('main-image-coqueteleira', 'large_roxa.jpg')">Roxa</button>
-                    <button onclick="changeImage('main-image-coqueteleira', 'large_verde.jpg')">Verde</button>
-                    <button onclick="changeImage('main-image-coqueteleira', 'large_rosa.jpg')">Rosa</button>
+                <div class="colors">
+                    <p>Cor:</p>
+                    <button onclick="changeImage('large_roxa.jpg')">Roxa</button>
+                    <button onclick="changeImage('large_branco_perolado.jpg')">Branco Perolado</button>
+                    <button onclick="changeImage('large_preto_fume.jpg')">Preto Fumê</button>
+                    <button onclick="changeImage('large_rosa.jpg')">Pink</button>
+                    <button onclick="changeImage('large_azul_tifanni.jpg')">Azul Tiffany</button>
+		    <button onclick="changeImage('large_verde.jpg')">Verde</button>
                 </div>
-                <a href="https://wa.me/5515997265082?text=Olá!%20Tenho%20interesse%20na%20Coqueteleira%20DFE%20FIT%20600%20ML.%20Preço:%20R$%2025,00." target="_blank" class="whatsapp-button">
+                <a href="https://wa.me/5515997265082?text=Olá!%20Tenho%20interesse%20no%20Coqueteleira%20DFE%20FIT%20600%20ML.%20Preço:%20R$%2025,00." target="_blank" class="whatsapp-button">
                     <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
                 </a>
                 <div class="thumbnail-gallery">
-                    <img src="large_roxa.jpg" alt="Coqueteleira Roxa" onclick="changeImage('main-image-coqueteleira', 'large_roxa.jpg')" />
-                    <img src="large_verde.jpg" alt="Coqueteleira Verde" onclick="changeImage('main-image-coqueteleira', 'large_verde.jpg')" />
-                    <img src="large_rosa.jpg" alt="Coqueteleira Rosa" onclick="changeImage('main-image-coqueteleira', 'large_rosa.jpg')" />
+                    <img src="large_roxa.jpg" alt="Coqueteleira Roxa" onclick="changeImage('large_roxa.jpg')">
+                    <img src="large_branco_perolado.jpg" alt="Coqueteleira Branco Perolado" onclick="changeImage('large_branco_perolado.jpg')">
+                    <img src="large_preto_fume.jpg" alt="Coqueteleira Preto Fumê" onclick="changeImage('large_preto_fume.jpg')">
+                    <img src="large_azul_tifanni.jpg" alt="Coqueteleira Azul Tiffany" onclick="changeImage('large_azul_tifanni.jpg')">
+                    <img src="large_rosa.jpg" alt="Coqueteleira Rosa" onclick="changeImage('large_rosa.jpg')">
+		    <img src="large_verde.jpg" alt="Coqueteleira Verde" onclick="changeImage('large_verde.jpg')">	
                 </div>
             </div>
         </div>
+
+        <!-- Garrafas -->
+        <div id="garrafa" class="product-section">
+            <div class="product-image">
+                <img id="main-image-2" src="tubinho_vermelho.jpg" alt="Garrafa Vermelha" onclick="zoomImage(this)">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Garrafa DFE 500 ML</h2>
+                <p class="product-price">R$ 10,90</p>
+                <div class="colors">
+                    <p>Cor:</p>
+                    <button onclick="changeImageSecondProduct('tubinho_vermelho.jpg')">Vermelho</button>
+                    <button onclick="changeImageSecondProduct('tubinho_preto.jpg')">Preto</button>
+                    <button onclick="changeImageSecondProduct('tubinho_rosa.jpg')">Rosa</button>
+                </div>
+                <a href="https://wa.me/5515997265082?text=Olá!%20Tenho%20interesse%20na%20Garrafa%20DFE%20500%20ML.%20Preço:%20R$%2010,90." target="_blank" class="whatsapp-button">
+                    <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                </a>
+                <div class="thumbnail-gallery">
+                    <img src="tubinho_vermelho.jpg" alt="Garrafa Vermelha" onclick="changeImageSecondProduct('tubinho_vermelho.jpg')">
+                    <img src="tubinho_preto.jpg" alt="Garrafa Preta" onclick="changeImageSecondProduct('tubinho_preto.jpg')">
+                    <img src="tubinho_rosa.jpg" alt="Garrafa Rosa" onclick="changeImageSecondProduct('tubinho_rosa.jpg')">
+                </div>
+            </div>
+        </div>
+
+        <!-- Galão -->
+        <div id="galao" class="product-section">
+            <div class="product-image">
+                <img id="main-image-3" src="galao_azul.jpg" alt="Garrafa Azul 5L" onclick="zoomImage(this)">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Galão 1L DFE FIT</h2>
+                <p class="product-price">R$ 18,90</p>
+                <div class="colors">
+                    <p>Cor:</p>
+                    <button onclick="changeImageThirdProduct('galao_azul.jpg')">Azul</button>
+                    <button onclick="changeImageThirdProduct('galao_rosa.jpg')">Rosa</button>
+                    <button onclick="changeImageThirdProduct('galao_vermelho.jpg')">Vermelho</button>
+                </div>
+                <a href="https://wa.me/5515997265082?text=Olá!%20Tenho%20interesse%20no%20Galão%201L%20DFE%20FIT.%20Preço:%20R$%2018,90." target="_blank" class="whatsapp-button">
+                    <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                </a>
+                <div class="thumbnail-gallery">
+                    <img src="galao_azul.jpg" alt="Galão Azul" onclick="changeImageThirdProduct('galao_azul.jpg')">
+                    <img src="galao_rosa.jpg" alt="Galão Rosa" onclick="changeImageThirdProduct('galao_rosa.jpg')">
+                    <img src="galao_vermelho.jpg" alt="Galão Vermelho" onclick="changeImageThirdProduct('galao_vermelho.jpg')">
+                </div>
+            </div>
+        </div>
+
+        <!-- Mola -->
+        <div id="mola" class="product-section">
+            <div class="product-image">
+                <img id="main-image-4" src="mola1.jpg" alt="Mola Inox" onclick="zoomImage(this)">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Mola Inox Mixer</h2>
+                <p class="product-price">R$ 3,50</p>
+                <a href="https://wa.me/5515997265082?text=Olá!%20Tenho%20interesse%20na%20Mola%20Inox%20Mixer.%20Preço:%20R$%203,50." target="_blank" class="whatsapp-button">
+                    <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                </a>
+                <div class="thumbnail-gallery">
+                    <img src="mola1.jpg" alt="Mola Inox" onclick="changeImageMola('mola1.jpg')">
+                    <img src="mola2.jpg" alt="Mola Inox" onclick="changeImageMola('mola2.jpg')">
+                </div>
+            </div>
+        </div>
+
+<!-- Conjunto Straps DFE FIT -->
+<div id="strap" class="product-section">
+    <div class="product-image">
+        <img id="main-image-5-img" src="straps1.jpg" alt="CONJUNTO STRAPS DFE FIT" style="width: 100%; height: auto;">
+        <video id="main-image-5-video" src="" style="width: 100%; height: auto; display: none;" controls></video>
+    </div>
+    <div class="product-details">
+        <h2 class="product-title">Conjunto Straps DFE FIT</h2>
+        <p class="product-price">R$ 29,90</p>
+        <a href="https://wa.me/5515997265082?text=Olá!%20Tenho%20interesse%20no%20Straps%20DFE.%20Preço:%20R$%2029,90." target="_blank" class="whatsapp-button">
+            <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+        </a>
+        <div class="thumbnail-gallery">
+            <img src="straps1.jpg" alt="CONJUNTO STRAPS DFE FIT" onclick="changeImageStrap('straps1.jpg')" style="width: 80px; height: 80px; object-fit: cover;">
+            <img src="video_thumbnail.jpg" alt="Vídeo Straps" id="video-thumbnail" data-video-src="strap_video.mp4" style="width: 80px; height: 80px; object-fit: cover;">
+        </div>
+    </div>
+</div>
+
+<!-- Script para controlar o Modal -->
+<script>
+    function showModalVideo() {
+        var modal = document.getElementById("video-modal");
+        modal.style.display = "flex";
+        var video = document.getElementById("modal-video");
+        video.play(); // Inicia o vídeo assim que o modal é aberto
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("video-modal");
+        modal.style.display = "none";
+        var video = document.getElementById("modal-video");
+        video.pause(); // Pausa o vídeo ao fechar o modal
+        video.currentTime = 0; // Reseta o vídeo para o início
+    }
+</script>
+
+
+        <!-- Informações -->
+        <div class="info-section">
+            <h3>Sobre nós</h3>
+            <p>Bem-vindo ao DFE Fitness! Nós oferecemos uma seleção de produtos de alta qualidade para o seu desempenho nos treinos. A nossa missão é fornecer acessórios e equipamentos de fitness para melhorar a sua experiência e ajudá-lo a alcançar seus objetivos.</p>
+        </div>
     </div>
 
-    <!-- Zoomed Image Overlay -->
-    <div id="zoomed-image" class="zoomed-image" onclick="closeZoom()">
-        <span class="close-btn" onclick="closeZoom(event)">&times;</span>
-        <img src="" alt="Zoomed product" />
+    <div class="footer-whatsapp">
+        <a href="https://wa.me/5515997265082" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     </div>
+
+    <div id="zoomed-image" class="zoomed-image">
+        <img src="" alt="Zoomed Image">
+        <div class="close-btn" onclick="closeZoom()">×</div>
+    </div>
+
+<div class="footer-panel">
+    <div class="footer-social">
+        <a href="https://www.instagram.com/dfefitness/" target="_blank" class="social-icon instagram-icon" title="Instagram DFE Fitness">
+            <i class="fab fa-instagram"></i>
+            <span class="social-text">Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/dfefitness" target="_blank" class="social-icon facebook-icon" title="Facebook DFE Fitness">
+            <i class="fab fa-facebook-square"></i>
+            <span class="social-text">Facebook</span>
+        </a>
+        <p class="whatsapp-contact">
+            <a href="https://wa.me/5515997265082" target="_blank" title="WhatsApp DFE Fitness">
+                <i class="fab fa-whatsapp"></i>
+                <span class="social-text">WhatsApp</span>
+            </a>
+        </p>
+    </div>
+</div>
 
     <script>
-        function changeImage(mainImgId, newSrc) {
-            document.getElementById(mainImgId).src = newSrc;
-        }
+function changeImage(image) {
+    document.getElementById('main-image').src = image;
+}
 
-        function zoomImage(img) {
-            const zoomDiv = document.getElementById('zoomed-image');
-            const zoomImg = zoomDiv.querySelector('img');
-            zoomImg.src = img.src;
-            zoomDiv.classList.add('open');
-        }
+function changeImageSecondProduct(image) {
+    document.getElementById('main-image-2').src = image;
+}
 
-        function closeZoom(event) {
-            if(event) event.stopPropagation();
-            document.getElementById('zoomed-image').classList.remove('open');
-        }
+function changeImageThirdProduct(image) {
+    document.getElementById('main-image-3').src = image;
+}
+
+function changeImageMola(image) {
+    document.getElementById('main-image-4').src = image;
+}
+
+function changeImageStrap(image) {
+    var videoElement = document.getElementById('main-image-5-video');
+    videoElement.pause();
+    document.getElementById('main-image-5-img').src = image;
+    document.getElementById('main-image-5-img').classList.remove('hidden');
+    videoElement.classList.add('hidden');
+}
+
+document.getElementById('video-thumbnail').addEventListener('click', function() {
+    var videoSrc = this.getAttribute('data-video-src');
+    var videoElement = document.getElementById('main-image-5-video');
+    videoElement.src = videoSrc;
+    videoElement.classList.remove('hidden');
+    document.getElementById('main-image-5-img').classList.add('hidden');
+});
+
+document.getElementById('main-image-5-video').addEventListener('click', function() {
+    var videoElement = document.getElementById('main-image-5-video');
+    if (videoElement.getAttribute('controls')) {
+        videoElement.classList.add('hidden');
+        document.getElementById('main-image-5-img').classList.remove('hidden');
+    }
+});
+
+function zoomImage(image) {
+    const zoomedImage = document.getElementById('zoomed-image');
+    const zoomedImg = zoomedImage.querySelector('img');
+    zoomedImg.src = image.src;
+    zoomedImage.classList.add('open');
+}
+
+function closeZoom() {
+    document.getElementById('zoomed-image').classList.remove('open');
+}
+	
+function changeImageStrap(image) {
+    var videoElement = document.getElementById('main-image-5-video');
+    videoElement.pause(); // Pausa o vídeo
+    document.getElementById('main-image-5-img').src = image;
+    document.getElementById('main-image-5-img').style.display = 'block';
+    videoElement.style.display = 'none';
+    videoElement.removeAttribute('autoplay');
+}
+
+document.getElementById('video-thumbnail').addEventListener('click', function() {
+    var videoSrc = this.getAttribute('data-video-src');
+    var videoElement = document.getElementById('main-image-5-video');
+    videoElement.src = videoSrc;
+    videoElement.style.display = 'block';
+    videoElement.setAttribute('autoplay', 'autoplay');
+    document.getElementById('main-image-5-img').style.display = 'none';
+});
+
+document.getElementById('main-image-5-video').addEventListener('click', function() {
+    var videoElement = document.getElementById('main-image-5-video');
+    if (videoElement.getAttribute('controls')) {
+        videoElement.style.display = 'none';
+        videoElement.removeAttribute('autoplay');
+        document.getElementById('main-image-5-img').style.display = 'block';
+    }
+});
+
+// Pausar o vídeo ao clicar em qualquer outro elemento que altere a imagem principal
+function pauseVideo() {
+    var videoElement = document.getElementById('main-image-5-video');
+    videoElement.pause();
+}
+
+// Adicionar evento de clique para todas as imagens dos outros componentes
+var otherImages = document.querySelectorAll('.product-image img');
+otherImages.forEach(function(img) {
+    if (img.id !== 'main-image-5-img') {
+        img.addEventListener('click', pauseVideo);
+    }
+});
+
+// Adicionar evento de clique para os botões de cores
+var colorButtons = document.querySelectorAll('.colors button');
+colorButtons.forEach(function(button) {
+    button.addEventListener('click', pauseVideo);
+});
+
+function changeImageCamiseta(image) {
+    document.getElementById('main-image-camiseta').src = image;
+}
+
+
+// Adicionar evento de clique para as miniaturas dos outros componentes
+var thumbnails = document.querySelectorAll('.thumbnail-gallery img');
+thumbnails.forEach(function(thumbnail) {
+    if (thumbnail.id !== 'video-thumbnail' && thumbnail.parentElement.parentElement.id !== 'strap') {
+        thumbnail.addEventListener('click', pauseVideo);
+    }
+});
     </script>
 </body>
 </html>
-
